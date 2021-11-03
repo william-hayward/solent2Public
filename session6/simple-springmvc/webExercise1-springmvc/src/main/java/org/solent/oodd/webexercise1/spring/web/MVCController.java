@@ -36,7 +36,23 @@ public class MVCController {
         }
         return "home";
     }
-
+    
+    // This simply cllas the jspexample3d.jsp page (without modification) when /userlist is requested
+    @RequestMapping(value = "/userlist", method = {RequestMethod.GET, RequestMethod.POST})
+    public String jspexample3d(
+            Model model,
+            HttpSession session) {
+        return "jspexample3d";
+    }
+    
+    //this simply calls the jspexample3d-modify.jsp page (without modification) when /userlist-modify is requested
+    @RequestMapping(value = "/userlist-modify", method = {RequestMethod.GET, RequestMethod.POST})
+    public String jspexample3dModify(
+            Model model,
+            HttpSession session) {
+        return "jspexample3d-modify";
+    }
+    
     /*
      * Default exception handler, catches all exceptions, redirects to friendly
      * error page. Does not catch request mapping errors
